@@ -16,22 +16,21 @@
                 <img src="src/img/title.png" alt="title" class="w-32 h-32 object-contain">
             </div>
             <div class="flex items-center gap-8">
-                <select name="kind" id="kind" class=" border-2 border-red-800 rounded-md">
+                <select name="kind" id="kind" class=" border-2 border-red-800 bg-gray-200 rounded-md">
                     <option value="tous">tous</option>
                     <option value="Series">Series</option>
                     <option value="Films">Films</option>
                 </select>
                 <input type="text" name="movie_title" id="movie" placeholder="e.g., Fight Club"
-                    class="text-center rounded-md border-2 border-red-800" rounded-md outline-none">
+                    class="text-center rounded-md border-2 border-red-800 bg-gray-200 rounded-md outline-none">
                 <img src="src/img/search.png" alt="recherch" class="w-8 h-8">
             </div>
         </div>
     </header>
     <main class="grid grid-cols-4 min-h-screen">
-        </section>
         <section id="movies" class="col-span-3 border-r border-white p-6 bg-black">
             <p class="text-white text-xl">Movies</p>
-            <section id="movie-container" class="grid grid-cols-3 grid-row-3 gap-8 mx-4 my-4"></section>
+            <section id="movie-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-4 my-4"></section>
             <section id="pagination" class="flex justify-center items-center my-8 gap-4"></section>
         </section>
         <section id="favourites" class="col-span-1 p-6 bg-black">
@@ -41,6 +40,6 @@
     <footer class="flex justify-center bg-black border-t border-white">
         <p class="text-white">© CineTrack . 2026</p>
     </footer>
+    <script type="module" src="src/js/main.js"></script>
 </body>
-
 </html>
