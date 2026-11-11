@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://googleapis.com" rel="stylesheet">
     <title>Document</title>
 </head>
 
@@ -16,7 +17,7 @@
                 <img src="src/img/title.png" alt="title" class="w-32 h-32 object-contain">
             </div>
             <div class="flex items-center gap-8">
-                <select name="kind" id="kind" class=" border-2 border-red-800 bg-gray-200 rounded-md">
+                <select name="kind" id="kind" class="font-['inter'] border-2 border-red-800 bg-gray-200 rounded-md">
                     <option value="tous">tous</option>
                     <option value="Series">Series</option>
                     <option value="Films">Films</option>
@@ -29,12 +30,12 @@
     </header>
     <main class="grid grid-cols-4 min-h-screen">
         <section id="movies" class="col-span-3 border-r border-white p-6 bg-black">
-            <p class="text-white text-xl">Movies</p>
+            <p class="text-white text-xl font-['Robot']">Movies</p>
             <section id="movie-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-4 my-4"></section>
             <section id="pagination" class="flex justify-center items-center my-8 gap-4"></section>
         </section>
         <section id="favourites" class="col-span-1 p-6 bg-black">
-            <p class="text-white text-xl">Favourite ♡</p>
+            <p class="text-white text-xl font-['poppings']">Favourite ♡</p>
         </section>
     </main>
     <footer class="flex justify-center bg-black border-t border-white">
