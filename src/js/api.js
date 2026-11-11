@@ -3,4 +3,3 @@ export async function fetchdata(url) {
     const movies = await response.json();
     return movies;
 }
-console
