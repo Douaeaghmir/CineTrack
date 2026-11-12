@@ -8,10 +8,12 @@ export function affichCard(movies)
                 class="w-full h-72 object-cover"
             >
             <div class="p-4">
-
+                <div class="flex items-center justify-between">
                 <h2 class="text-white text-xl font-bold mb-3">
                     ${movies.title}
                 </h2>
+                <button class="bg-red-600 w-[50px] rounded-md">🤍</button>
+                </div>
                 <div class="flex justify-between">
                 <p class="font-['inter'] bg-red-600 border-2 border-red-600 rounded-md text-white px-3">${movies.type}</p>
                 <p class="text-gray-400 mt-2 font-['Robot']">
@@ -21,4 +23,10 @@ export function affichCard(movies)
             </div>
         </article>
     `;
+}
+export function messages(displayCards)
+{
+            return displayCards.innerHTML = `<div class="text-center col-span-full p-5 border-2 rounded border-red-800 bg-red-600 ml-[250px] mr-[250px]">
+            <p class="text-center text-white font-['Robot']">No Movie Or Series Was Found Under This Name</p>
+            </div>`
 }

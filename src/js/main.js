@@ -1,5 +1,5 @@
 import { fetchdata } from "./api.js";
-import { affichCard } from "./render.js";
+import { affichCard , messages} from "./render.js";
 import { searchMatch , FilterMatch } from "./filters.js";
 
 
@@ -11,14 +11,19 @@ const Pagination = document.getElementById("pagination");
 const movies = await fetchdata();
 let filterMovie = movies;
 let currentPage = 1;
-let NumberOfCards = 6;
+let NumberOfCards = 9;
 
 
 async function searchByName() {   
     searchInput.addEventListener("input" , () =>{
          let searchResult = searchMatch(movies , searchInput.value);
-         updateDisplay(searchResult);
-        console.log(searchResult);
+         if(searchResult.length === 0)
+         {
+            messages(displayCards);
+            Pagination.innerHTML = "";
+         }
+         else
+         updateDisplay(searchResult); 
     })
 }
 searchByName();
@@ -65,8 +70,6 @@ displayPagination();
 function updateDisplay(result)
 {
     filterMovie = result;
-
-    currentPage = 1;
     displayPages()
     displayPagination();
 }
