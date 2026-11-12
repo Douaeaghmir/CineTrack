@@ -1,6 +1,7 @@
 import { fetchdata } from "./api.js";
 import { affichCard , messages} from "./render.js";
 import { searchMatch , FilterMatch } from "./filters.js";
+import { clickButtonFav } from "./favorites.js"
 
 
 const filterType = document.getElementById("kind");
@@ -43,6 +44,7 @@ async function displayPages() {
     let moviesToDisplay = filterMovie.slice(start , end);
 
     displayCards.innerHTML = moviesToDisplay.map(movie => affichCard(movie)).join("");
+    clickButtonFav();
 }
 displayPages();
 
@@ -51,8 +53,6 @@ async function displayPagination()
     console.log(filterMovie);
     let correctNumberOfPages = Math.ceil(filterMovie.length / NumberOfCards);
     Pagination.innerHTML = "";
-
-    
     for(let i  = 1 ; i <= correctNumberOfPages ; i++)
     {
         let btn = document.createElement("button");

@@ -8,9 +8,12 @@ export function affichCard(movies)
                 class="w-full h-72 object-cover"
             >
             <div class="p-4">
+                <div class="flex items-center justify-between">
                 <h2 class="text-white text-xl font-bold mb-3">
                     ${movies.title}
                 </h2>
+                <button class="added bg-red-600 w-[50px] rounded-md" data-id="${movies.id}">🖤</button>
+                </div>
                 <div class="flex justify-between">
                 <p class="font-['inter'] bg-red-600 border-2 border-red-600 rounded-md text-white px-3">${movies.type}</p>
                 <p class="text-gray-400 mt-2 font-['Robot']">
