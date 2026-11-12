@@ -13,18 +13,12 @@ let filterMovie = movies;
 let currentPage = 1;
 let NumberOfCards = 6;
 
-async function initialCards() {
-    displayCards.innerHTML = movies.map(movie => affichCard(movie)).join("");
-    updateDisplay(movies);
-}
-initialCards();
 
 async function searchByName() {   
     searchInput.addEventListener("input" , () =>{
          let searchResult = searchMatch(movies , searchInput.value);
          updateDisplay(searchResult);
         console.log(searchResult);
-        displayCards.innerHTML = searchResult.map(movie => affichCard(movie)).join("");
     })
 }
 searchByName();
@@ -34,7 +28,6 @@ async function filterByName()
     filterType.addEventListener("change" , () => {
         let filterResult = FilterMatch(movies , filterType.value);
         updateDisplay(filterResult)
-        displayCards.innerHTML = filterResult.map(movie => affichCard(movie)).join("");
     })
 }
 filterByName();
@@ -59,7 +52,7 @@ async function displayPagination()
     {
         let btn = document.createElement("button");
         btn.textContent = i;
-        btn.className = "bg-red-600 text-white px-4 py-2 rounded focus:bg-red-800 focus:h-12";
+        btn.className = "font-['poppins'] bg-red-600 text-white px-4 py-2 rounded focus:bg-red-800 focus:h-12";
         Pagination.appendChild(btn);
         btn.addEventListener("click" , ()=>{
             currentPage = i;
