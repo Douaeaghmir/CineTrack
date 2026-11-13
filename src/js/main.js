@@ -2,7 +2,7 @@ import { fetchdata } from "./api.js";
 import { affichCard , messages} from "./render.js";
 import { searchMatch , FilterMatch } from "./filters.js";
 import { clickButtonFav } from "./favorites.js"
-
+import { openMovieModal } from "./modal.js";
 
 const filterType = document.getElementById("kind");
 const searchInput = document.getElementById("movie");
@@ -10,6 +10,7 @@ const displayCards = document.getElementById("movie-container");
 const favourites = document.getElementById("favourites");
 const Pagination = document.getElementById("pagination");
 const movies = await fetchdata();
+openMovieModal(movies);
 let filterMovie = movies;
 let currentPage = 1;
 let NumberOfCards = 9;

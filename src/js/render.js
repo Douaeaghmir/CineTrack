@@ -1,6 +1,6 @@
 export function affichCard(movies) 
 {
-    return `<article class="bg-zinc-900 rounded-xl overflow-hidden shadow-lg hover:border-2 border-red-800 transition-all hover:shadow-red-600 shadow-md">
+    return `<article data-id="${movies.id}" class="bg-zinc-900 rounded-xl overflow-hidden shadow-lg hover:border-2 border-red-800 transition-all hover:shadow-red-600 shadow-md">
 
             <img
                 src="${movies.image}"
@@ -34,7 +34,7 @@ export function messages(displayCards)
 
 export function displaCardFav(movies) {
     return `
-        <article class="flex items-center gap-3 bg-zinc-900 p-2 rounded-lg mb-3">
+        <article  class="flex items-center gap-3 bg-zinc-900 p-2 rounded-lg mb-3">
 
             <img 
                 src="${movies.image}" 
