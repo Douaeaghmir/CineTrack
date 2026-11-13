@@ -44,7 +44,7 @@ async function displayPages() {
     let moviesToDisplay = filterMovie.slice(start , end);
 
     displayCards.innerHTML = moviesToDisplay.map(movie => affichCard(movie)).join("");
-    clickButtonFav();
+    clickButtonFav(movies , favourites);
 }
 displayPages();
 

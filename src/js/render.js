@@ -30,3 +30,29 @@ export function messages(displayCards)
             <p class="text-center text-white font-['Robot']">No Movie Or Series Was Found Under This Name</p>
             </div>`
 }
+
+
+export function displaCardFav(movies) {
+    return `
+        <article class="flex items-center gap-3 bg-zinc-900 p-2 rounded-lg mb-3">
+
+            <img 
+                src="${movies.image}" 
+                alt="${movies.title}"
+                class="w-16 h-20 object-cover rounded-md"
+            >
+
+            <h3 class="text-white font-bold flex-1">
+                ${movies.title}
+            </h3>
+
+            <button 
+                class="removeFav bg-red-600 text-white px-3 py-2 rounded-md"
+                data-id="${movies.id}"
+            >
+                X
+            </button>
+
+        </article>
+    `;
+}
