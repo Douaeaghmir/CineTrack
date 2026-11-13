@@ -14,11 +14,27 @@ export function clickButtonFav(movies, favourites) {
             }
             else
                 favMovies.push(movie);
-            button.textContent = exist ? "🖤" : "❤️";
             favourites.innerHTML = favMovies
                 .map(movie => displaCardFav(movie))
                 .join("");
-            console.log(favMovies);
         })
     })
+    favourites.addEventListener("click", (event) => {
+
+        if (event.target.classList.contains("removeFav")) {
+            const movieId = event.target.dataset.id;
+
+            favMovies = favMovies.filter(movie => movie.id != movieId);
+            const originalButton = document.querySelector(
+                `.added[data-id="${movieId}"]`
+            );
+
+            if (originalButton) {
+                originalButton.textContent = "🖤";
+            }
+            favourites.innerHTML = favMovies
+                .map(movie => displaCardFav(movie))
+                .join("");
+        }
+    });
 }
