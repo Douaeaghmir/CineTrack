@@ -1,6 +1,12 @@
 import { displaCardFav } from "./render.js";
-let favMovies = [];
+import { saveFavorites } from "./api.js"
+let favMovies = JSON.parse(localStorage.getItem("favorites")) || [];
+
+
 export function clickButtonFav(movies, favourites) {
+    favourites.innerHTML = favMovies
+    .map(movie => displaCardFav(movie))
+    .join("");
     const btn = document.querySelectorAll(".added");
 
     btn.forEach(button => {
@@ -14,6 +20,7 @@ export function clickButtonFav(movies, favourites) {
             }
             else
                 favMovies.push(movie);
+            saveFavorites(favMovies);
             favourites.innerHTML = favMovies
                 .map(movie => displaCardFav(movie))
                 .join("");
@@ -25,6 +32,7 @@ export function clickButtonFav(movies, favourites) {
             const movieId = event.target.dataset.id;
 
             favMovies = favMovies.filter(movie => movie.id != movieId);
+            saveFavorites(favMovies);
             const originalButton = document.querySelector(
                 `.added[data-id="${movieId}"]`
             );

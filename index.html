@@ -31,11 +31,14 @@
     <main class="grid grid-cols-4 min-h-screen">
         <section id="movies" class="col-span-3 border-r border-red-800 p-6 bg-black">
             <p class="text-white text-xl font-['Robot']">Movies</p>
-            <section id="movie-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-4 my-4"></section>
+            <section id="movie-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-4 my-4">
+            </section>
             <section id="pagination" class="flex justify-center items-center my-8 gap-4"></section>
         </section>
-        <section id="favourites" class="col-span-1 p-6 bg-black">
+        <section class="col-span-1 p-6 bg-black">
             <p class="text-white text-xl font-['poppings']">Favourite ♡</p>
+            <div id="favourites">
+            </div>
         </section>
     </main>
     <footer class="flex justify-center bg-black border-t border-red-800">
@@ -43,4 +46,5 @@
     </footer>
     <script type="module" src="src/js/main.js"></script>
 </body>
+
 </html>
